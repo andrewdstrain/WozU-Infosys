@@ -29,4 +29,4 @@ class Main {
 }
 ```
 
-[Here is a link to a cool website!](https://start.duckduckgo.com)
+[Quackable Searching](https://start.duckduckgo.com)
