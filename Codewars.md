@@ -77,3 +77,29 @@ class Caps{
     }
 }
 ```
+
+### [Find numbers which are divisible by given number](https://www.codewars.com/kata/55edaba99da3a9c84000003b/train/java)
+
+```java
+import java.util.List;
+import java.util.Vector;
+
+public class EvenNumbers {
+  public static int[] divisibleBy(int[] numbers, int divider) {
+    List<Integer> list = new Vector<Integer>(numbers.length);
+
+    for (int number : numbers) {
+      if (number % divider == 0) {
+        list.add(number);
+      }
+    }
+
+    int[] answer = new int[list.size()];
+    for (int i = 0; i < answer.length; i++) {
+      answer[i] = list.get(i);
+    }
+
+    return answer;
+  }
+}
+```
