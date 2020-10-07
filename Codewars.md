@@ -41,6 +41,39 @@ public class Reverse{
 }
 ```
 
+### [Alternate capitalization](https://www.codewars.com/kata/59cfc000aeb2844d16000075/train/java)
 
+```java
+class Caps{
+    public static String[] capitalize(String s){
+        // Initialization
+        StringBuilder even = new StringBuilder();
+        StringBuilder odd = new StringBuilder();
 
+        // Loop through string
+        for (int i = 0; i < s.length(); i++){
+            // Get the character of the day
+            String ch = s.substring(i, i + 1);
+            
+            // Even uppercase, odd lowercase
+            if (i % 2 == 0) {
+                even.append(ch.toUpperCase());
+                odd.append(ch.toLowerCase());
+            }
+            // Odd uppercase, even lowercase
+            else {
+                even.append(ch.toLowerCase());
+                odd.append(ch.toUpperCase());
+            }
+        }
 
+        // Put even and odd solutions into our answer
+        String[] answer = new String[2];
+        answer[0] = even.toString();
+        answer[1] = odd.toString();
+
+        // Array of even/odd capitalization of the string
+        return answer;
+    }
+}
+```
