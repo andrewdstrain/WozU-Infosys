@@ -25,3 +25,5 @@ class Solution {
 ### [Top K Frequent Words](https://leetcode.com/problems/top-k-frequent-words/)
 
 The solution is coded [here](Top%20K%20Frequent%20Words/src).
+
+![Success](success.png)
