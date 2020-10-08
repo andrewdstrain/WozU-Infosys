@@ -2,7 +2,7 @@
  * Counts words and sorts in descending order (highest to lowest).
  */
 public class WordCount implements Comparable<WordCount> {
-    private String word;
+    private String bird;    // "A-well-a bird bird bird, bird is the word"
     private int count;
 
     // Prevent default constructor
@@ -17,7 +17,7 @@ public class WordCount implements Comparable<WordCount> {
      */
     public WordCount(String word) {
         this();
-        this.word = word;
+        this.bird = word;
         this.count = 1;
     }
 
@@ -31,10 +31,10 @@ public class WordCount implements Comparable<WordCount> {
     /**
      * Returns the word that is counted
      *
-     * @return the word, word, word
+     * @return the word
      */
     public String getWord() {
-        return this.word;
+        return this.bird;
     }
 
     public int compareTo(WordCount wc) {
@@ -48,7 +48,7 @@ public class WordCount implements Comparable<WordCount> {
             return 1;
         }
 
-        // if equal, Compare by word
-        return this.word.compareTo(wc.word);
+        // if equal, compare by word
+        return this.bird.compareTo(wc.bird);
     }
 }
