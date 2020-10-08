@@ -9,7 +9,7 @@ class Solution {
         
         for (int i = 0;  i < length; i++ ) {
             for (int j = 0; j < length; j++ ) {
-                // may not use the same element twice
+                // cannot use the same element twice
                 if (i == j) continue;
                 
                 // Do we have a winner?!
