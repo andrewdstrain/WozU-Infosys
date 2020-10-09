@@ -1,8 +1,9 @@
-.DS_Store
 .idea/
-out/
+.settings/
 bin/
-*.iml
+out/
+.DS_Store
 .classpath
 .project
+*.iml
 *.zip
