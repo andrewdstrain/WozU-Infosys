@@ -3,7 +3,7 @@ package lab.parcel;
 import lab.address.Address;
 import lab.location.Location;
 
-public class Letter implements Deliverable {
+public class Letter implements Parcel {
 	private Address address;
 	private String message;
 	

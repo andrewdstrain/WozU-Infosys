@@ -3,10 +3,10 @@ package lab.location;
 import java.util.List;
 
 import lab.address.Address;
-import lab.parcel.Deliverable;
+import lab.parcel.Parcel;
 
 public interface Location {
 	Address getAddress();
-	List<Deliverable> getParcels();
-	void receive(Deliverable parcel);
+	List<Parcel> getParcels();
+	void receive(Parcel parcel);
 }

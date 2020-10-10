@@ -10,7 +10,7 @@ import lab.address.StreetAddress;
 import lab.location.Box;
 import lab.location.Location;
 import lab.parcel.Container;
-import lab.parcel.Deliverable;
+import lab.parcel.Parcel;
 import lab.parcel.Letter;
 
 public class USPS implements Runnable {
@@ -24,11 +24,15 @@ public class USPS implements Runnable {
 		System.out.println("done");
 		
 		System.out.print("Creating parcels...");
-		List<Deliverable> parcels = new ArrayList<>();
+		List<Parcel> parcels = new ArrayList<>();
 		parcels.add(new Letter(andy, "Please respond to this immediately"));
 		parcels.add(new Letter(adam, "Lazing around on a Friday afternoon."));
 		parcels.add(new Letter(anne, "This is the life."));
-		parcels.add(new Container(anne, "Forks/Spoons/Knives"));
+		Container container = new Container(anne);
+		container.addItem("Forks");
+		container.addItem("Spoons");
+		container.addItem("Knives");
+		parcels.add(container);
 		System.out.println("done");
 		
 		System.out.print("Creating locations...");
@@ -40,7 +44,7 @@ public class USPS implements Runnable {
 		
 		System.out.print("Delivering mail...");
 		for (Location location : locations) {
-			for (Deliverable parcel : parcels) {
+			for (Parcel parcel : parcels) {
 				if (parcel.getAddress().equals(location.getAddress())) {
 					parcel.deliver(location);
 				}
@@ -53,7 +57,7 @@ public class USPS implements Runnable {
 		System.out.println("----------");
 		for (Location location : locations) {
 			System.out.println(location.getAddress().getFullAddress() + ":");
-			for (Deliverable parcel : location.getParcels()) {
+			for (Parcel parcel : location.getParcels()) {
 				System.out.println("\t" + parcel.getMessage());
 			}
 		}

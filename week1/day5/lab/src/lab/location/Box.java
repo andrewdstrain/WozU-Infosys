@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lab.address.Address;
-import lab.parcel.Deliverable;
+import lab.parcel.Parcel;
 
 public class Box implements Location {
 	private Address address;
-	private List<Deliverable> parcels;
+	private List<Parcel> parcels;
 	
 	public Box(Address address) {
 		this.address = address;
@@ -16,7 +16,7 @@ public class Box implements Location {
 	}
 	
 	@Override
-	public void receive(Deliverable parcel) {
+	public void receive(Parcel parcel) {
 		this.parcels.add(parcel);
 	}
 
@@ -26,7 +26,7 @@ public class Box implements Location {
 	}
 
 	@Override
-	public List<Deliverable> getParcels() {
+	public List<Parcel> getParcels() {
 		return parcels;
 	}
 	

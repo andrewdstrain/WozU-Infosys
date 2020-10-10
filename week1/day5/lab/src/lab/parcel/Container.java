@@ -1,20 +1,27 @@
 package lab.parcel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lab.address.Address;
 import lab.location.Location;
 
-public class Container implements Deliverable {
+public class Container implements Parcel {
 	private Address address;
-	private String items;
+	private List<String> items;
 
-	public Container(Address address, String items) {
+	public Container(Address address) {
 		this.address = address;
-		this.items = items;
+		this.items = new ArrayList<>();
+	}
+	
+	public void addItem(String item) {
+		this.items.add(item);
 	}
 
 	@Override
 	public String getMessage() {
-		return items;
+		return items.toString();
 	}
 
 	@Override
