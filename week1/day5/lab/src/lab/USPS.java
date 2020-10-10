@@ -1,8 +1,14 @@
 package lab;
 
-import lab.mail.Box;
-import lab.mail.Mailbox;
-import lab.mail.POBox;
+import java.util.ArrayList;
+import java.util.List;
+
+import lab.address.Address;
+import lab.address.POBox;
+import lab.address.RuralRoute;
+import lab.address.StreetAddress;
+import lab.location.Box;
+import lab.location.Location;
 import lab.parcel.Container;
 import lab.parcel.Deliverable;
 import lab.parcel.Letter;
@@ -10,32 +16,46 @@ import lab.parcel.Letter;
 public class USPS implements Runnable {
 	@Override
 	public void run() {
-		// Recipients
-		System.out.print("Creating boxes...");
-		Box andy = new POBox(10, "New York", "NY", 12345, 1234, "US");
-		Box adam = new Mailbox(123, "Main St", "Chicago", "IL", 54321, 4321, "US");
-		Box anne = new Mailbox(2468, "Maven Ave", "Springfield", "IL", 24680, 8642, "US");
+		// Addresses
+		System.out.print("Creating addresses...");
+		Address andy = new POBox("10", "New York", "NY", 12345, 1234, "US");
+		Address adam = new StreetAddress(123, "Main St", "Chicago", "IL", 54321, 4321, "US");
+		Address anne = new RuralRoute(2468, "42Aß", "Springfield", "IL", 24680, 8642, "US");
 		System.out.println("done");
 		
 		System.out.print("Creating parcels...");
-		Deliverable urgent = new Letter("Please respond to this immediately");
-		Deliverable lazy = new Letter("Lazing around on a Friday afternoon.");
-		Deliverable utensils = new Container("Forks/Spoons/Knives");
+		List<Deliverable> parcels = new ArrayList<>();
+		parcels.add(new Letter(andy, "Please respond to this immediately"));
+		parcels.add(new Letter(adam, "Lazing around on a Friday afternoon."));
+		parcels.add(new Letter(anne, "This is the life."));
+		parcels.add(new Container(anne, "Forks/Spoons/Knives"));
+		System.out.println("done");
+		
+		System.out.print("Creating locations...");
+		List<Location> locations = new ArrayList<>();
+		locations.add(new Box(andy));
+		locations.add(new Box(adam));
+		locations.add(new Box(anne));
 		System.out.println("done");
 		
 		System.out.print("Delivering mail...");
-		urgent.deliver(anne);
-		urgent.deliver(adam);
-		lazy.deliver(andy);
-		utensils.deliver(adam);
+		for (Location location : locations) {
+			for (Deliverable parcel : parcels) {
+				if (parcel.getAddress().equals(location.getAddress())) {
+					parcel.deliver(location);
+				}
+			}
+		}
 		System.out.println("done");
 		
 		System.out.println();
 		System.out.println("Mail call:");
 		System.out.println("----------");
-		Box[] boxes = {andy, adam, anne};
-		for (Box box : boxes) {
-				System.out.println(box.getFullAddress() + ": " + box.getParcels());
+		for (Location location : locations) {
+			System.out.println(location.getAddress().getFullAddress() + ":");
+			for (Deliverable parcel : location.getParcels()) {
+				System.out.println("\t" + parcel.getMessage());
+			}
 		}
 	}
 }

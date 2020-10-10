@@ -1,7 +1,10 @@
 package lab.parcel;
 
-import lab.mail.Box;
+import lab.address.Address;
+import lab.location.Location;
 
 public interface Deliverable {
-	public void deliver(Box box);
+	Address getAddress();
+	String getMessage();
+	void deliver(Location location);
 } 
