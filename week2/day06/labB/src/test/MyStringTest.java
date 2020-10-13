@@ -11,9 +11,11 @@ public class MyStringTest {
     @Test
     void test() {
         MyString empty = new MyString();
+        MyString chars = new MyString(new char[] {'M', 'y', ' ', 'n', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'B', 'o', 'o', '!'});
         MyString str = new MyString("My name is Boo!");
 
         assertEquals(new MyString("My name is Boo!"), str);
+        assertEquals(new MyString("My name is Boo!"), chars);
 
         assertEquals("", empty.toString());
         assertEquals("My name is Boo!", str.toString());
@@ -82,6 +84,8 @@ public class MyStringTest {
         assertTrue(str.startsWith(new MyString("My ")));
         assertTrue(str.startsWith(new MyString("name "), 3));
 
+        assertEquals(new MyString("name"), str.subSequence(3, 7));
+
         assertEquals(new MyString("name is Boo!"), str.substring(3));
         assertEquals(new MyString("name"), str.substring(3, 7));
 
@@ -89,5 +93,33 @@ public class MyStringTest {
         assertEquals(new MyString("MY NAME IS BOO!"), str.toUpperCase());
 
         assertEquals(str, new MyString("   My name is Boo!      ").trim());
+    }
+
+    @Test
+    void staticMethods() {
+        assertEquals(new MyString("Boo!"), MyString.copyValueOf(new char[] {'B','o','o','!'}));
+        assertEquals(new MyString("oo"), MyString.copyValueOf(new char[] {'B','o','o','!'}, 1,2));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> MyString.copyValueOf(new char[] {'B','o','o','!'}, 1,4));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> MyString.copyValueOf(new char[] {'B','o','o','!'}, 4,1));
+
+        assertEquals(new MyString("true"), MyString.valueOf(true));
+        assertEquals(new MyString("false"), MyString.valueOf(false));
+
+        assertEquals(new MyString("z"), MyString.valueOf('z'));
+
+        assertEquals(new MyString("Boo!"), MyString.valueOf(new char[] {'B','o','o','!'}));
+        assertEquals(new MyString("oo"), MyString.valueOf(new char[] {'B','o','o','!'}, 1,2));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> MyString.valueOf(new char[] {'B','o','o','!'}, 1,4));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> MyString.valueOf(new char[] {'B','o','o','!'}, 4,1));
+
+        assertEquals(new MyString("3.14"), MyString.valueOf(3.14));
+        assertEquals(new MyString("3.14"), MyString.valueOf(3.14F));
+
+        assertEquals(new MyString("42"), MyString.valueOf(42));
+        assertEquals(new MyString("42"), MyString.valueOf(42L));
+
+        assertEquals(new MyString("My name is Boo!"), MyString.valueOf("My name is Boo!"));
+        assertEquals(new MyString("3.14"), MyString.valueOf(Float.valueOf(3.14F)));
+        assertEquals(new MyString("42"), MyString.valueOf(Integer.valueOf(42)));
     }
 }
