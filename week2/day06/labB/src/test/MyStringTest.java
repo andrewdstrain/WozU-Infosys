@@ -102,6 +102,9 @@ public class MyStringTest {
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> MyString.copyValueOf(new char[] {'B','o','o','!'}, 1,4));
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> MyString.copyValueOf(new char[] {'B','o','o','!'}, 4,1));
 
+        assertEquals(new MyString("My name is Boo!"), MyString.join(" ","My", "name", "is", "Boo!"));
+        assertEquals(new MyString("My name is Boo!"), MyString.join(" ", new String[] {"My", "name", "is", "Boo!"}));
+
         assertEquals(new MyString("true"), MyString.valueOf(true));
         assertEquals(new MyString("false"), MyString.valueOf(false));
 

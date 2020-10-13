@@ -162,6 +162,14 @@ public class MyString {
         return valueOf(data, offset, count);
     }
 
+    public static MyString join(CharSequence delimiter, CharSequence... elements) {
+        return new MyString(String.join(delimiter, elements));
+    }
+
+    public static MyString join(CharSequence delimiter, Iterable<? extends CharSequence> elements) {
+        return new MyString(String.join(delimiter, elements));
+    }
+
     public static MyString valueOf(boolean b) {
         return new MyString(String.valueOf(b));
     }
