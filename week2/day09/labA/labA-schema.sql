@@ -21,7 +21,7 @@ create table students_courses(
     student_id integer,
     course_id integer,
     grade decimal(2, 1),	# when not enrolled, grade will be from 0.0 to 4.0
-    enrolled integer,
+    enrolled integer,           # 1 - Yes, 0 - No
     foreign key (student_id) references students (id),
     foreign key (course_id) references courses (id)
 );
