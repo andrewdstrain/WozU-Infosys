@@ -22,4 +22,4 @@ For those that don't want to clone the submodules, here's the list so far.
 
 __Git Submodules__
 - [Bot](https://github.com/andrewdstrain/Bot)
-- [Linked List](https://github.com/andrewdstrain/LinkedList)
+- [LinkedList](https://github.com/andrewdstrain/LinkedList)
