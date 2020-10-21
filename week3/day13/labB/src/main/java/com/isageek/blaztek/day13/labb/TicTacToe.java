@@ -39,7 +39,7 @@ public class TicTacToe {
     }
 
     /**
-     * Returns the current player. The game starts with .
+     * Returns the current player. The game starts with X.
      *
      * @return the current player
      */
@@ -59,7 +59,7 @@ public class TicTacToe {
      * Helper method to check for valid indices.
      *
      * @param index the index to be checked
-     * @throws ArrayIndexOutOfBoundsException it's tic tac toe. index are 0, 1, or 2.
+     * @throws ArrayIndexOutOfBoundsException it's tic tac toe. indices are 0, 1, or 2.
      */
     private void checkIndex(int index) {
         if ((index < 0) || (index >= 3)) {
