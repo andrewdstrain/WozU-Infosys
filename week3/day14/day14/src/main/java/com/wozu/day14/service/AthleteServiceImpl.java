@@ -18,6 +18,11 @@ public class AthleteServiceImpl implements AthleteService {
     }
 
     @Override
+    public Iterable<Athlete> getAthletes() {
+        return athleteRepo.findAll();
+    }
+
+    @Override
     public Optional<Athlete> getAthleteById(Long id) {
         return  athleteRepo.findById(id);
     }
@@ -40,5 +45,20 @@ public class AthleteServiceImpl implements AthleteService {
         athleteRepo.deleteById(id);
 
         return athlete;
+    }
+
+    @Override
+    public Athlete updateAthlete(Athlete athlete, Long id) {
+        Optional<Athlete> optAthlete = athleteRepo.findById(id);
+        if (optAthlete == null) return null;
+        Athlete newAthlete = optAthlete.get();
+
+        newAthlete.setFirstName(athlete.getFirstName());
+        newAthlete.setLastName(athlete.getLastName());
+        newAthlete.setTeam(athlete.getTeam());
+        newAthlete.setSport(athlete.getSport());
+
+        athleteRepo.save(newAthlete);
+        return newAthlete;
     }
 }
