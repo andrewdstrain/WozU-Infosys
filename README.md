@@ -21,6 +21,6 @@ git clone --recurse-submodules git@github.com:andrewdstrain/WozU-Infosys.git
 For those that don't want to clone the submodules, here's the list so far.
 
 __Git Submodules__
-- [Bot](../Bot)
-- [LinkedList](../LinkedList)
-- [Tic-Tac-Toe](../Tic-Tac-Toe)
+- [Bot](../../../Bot)
+- [LinkedList](../../../LinkedList)
+- [Tic-Tac-Toe](../../../Tic-Tac-Toe)
