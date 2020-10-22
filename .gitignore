@@ -9,5 +9,6 @@ target/
 .project
 mvnw
 mvnw.cmd
+*.h2*.db
 *.iml
 *.zip
