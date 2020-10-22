@@ -125,4 +125,30 @@ public class TicTacToeTests {
             Assertions.assertThrows(AlreadyPlayedHereException.class, () -> game.mark(1, 1));
         });
     }
+
+    @Test
+    void isDraw() {
+        Assertions.assertDoesNotThrow(() -> {
+            game.mark(1, 1);
+            game.next();
+            game.mark(0, 0);
+            game.next();
+            game.mark(1, 0);
+            game.next();
+            game.mark(1, 2);
+            game.next();
+            game.mark(0, 2);
+            game.next();
+            game.mark(2, 0);
+            game.next();
+            game.mark(2, 1);
+            game.next();
+            game.mark(0, 1);
+            game.next();
+            game.mark(2, 2);
+        });
+
+        Assertions.assertFalse(game.checkBoardForWin());
+        Assertions.assertTrue(game.isDraw());
+    }
 }

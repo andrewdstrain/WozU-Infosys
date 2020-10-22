@@ -9,6 +9,7 @@ public class TicTacToe {
     private char player;
     private char[][] board;
     private boolean played;
+    private int freeTiles;
 
     public TicTacToe() {
         reset();
@@ -26,6 +27,7 @@ public class TicTacToe {
 
         player = X;
         played = false;
+        freeTiles = 9;
     }
 
     /**
@@ -83,6 +85,7 @@ public class TicTacToe {
         if (board[row][col] == ' ') {
             board[row][col] = player;
             played = true;
+            freeTiles--;
         } else {
             throw new AlreadyPlayedHereException();
         }
@@ -157,5 +160,12 @@ public class TicTacToe {
     public boolean checkBoardForWin() {
         return checkRowForWin() || checkColForWin() || checkDiagForWin();
     }
+
+    /**
+     * Checks to see if the match is a draw.
+     *
+     * @return true if there is a draw
+     */
+    public boolean isDraw() { return freeTiles == 0; }
 
 }
