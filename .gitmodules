@@ -4,3 +4,6 @@
 [submodule "week2/day10/lab/LinkedList"]
 	path = week2/day10/lab/LinkedList
 	url = git@github.com:andrewdstrain/LinkedList.git
+[submodule "week3/day13/labB"]
+	path = week3/day13/labB
+	url = git@github.com:andrewdstrain/Tic-Tac-Toe.git
