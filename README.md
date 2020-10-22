@@ -4,7 +4,7 @@ Here I hold my daily project solutions
 
 ## Note
 
-Because of the use of submodules, use one of the following commands for closing:
+Because of the use of submodules, use one of the following commands for cloning:
 
 __HTTPS__
 
