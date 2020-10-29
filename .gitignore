@@ -4,6 +4,7 @@
 bin/
 out/
 target/
+workspace/
 .DS_Store
 .classpath
 .project
