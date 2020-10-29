@@ -7,3 +7,12 @@
 [submodule "week3/day13/labB"]
 	path = week3/day13/labB
 	url = git@github.com:andrewdstrain/Tic-Tac-Toe.git
+[submodule "week4/CucumberTest"]
+	path = week4/CucumberTest
+	url = git@github.com:LionelBeato/CucumberTest.git
+[submodule "week4/Week4LabA"]
+	path = week4/Week4LabA
+	url = git@github.com:JoshuaJVB/Week4LabA.git
+[submodule "week4/Week4LabA.wiki"]
+	path = week4/Week4LabA.wiki
+	url = git@github.com:JoshuaJVB/Week4LabA.wiki.git
