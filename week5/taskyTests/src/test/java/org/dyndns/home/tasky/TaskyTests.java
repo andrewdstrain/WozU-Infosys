@@ -161,8 +161,8 @@ public class TaskyTests {
         Assertions.assertEquals("Log In", driver.findElement(By.tagName("h1")).getText());
     }
 
-//    @AfterAll
-//    static void afterAll() {
-//        driver.close();
-//    }
+    @AfterAll
+    static void afterAll() {
+        driver.close();
+    }
 }
