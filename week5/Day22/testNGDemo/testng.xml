@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/geek/IdeaProjects/WozU-Infosys/week5/testNGDemo">
+        <classes>
+            <class name="AllTests.FirstTest">
+                <methods>
+                    <include name="setup"/>
+                    <include name="testLogin"/>
+                    <include name="teardown"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
