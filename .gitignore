@@ -4,6 +4,7 @@
 bin/
 out/
 target/
+test-output/
 workspace/
 .DS_Store
 .classpath
