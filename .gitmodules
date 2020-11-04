@@ -16,3 +16,6 @@
 [submodule "week4/Week4LabA.wiki"]
 	path = week4/Week4LabA.wiki
 	url = git@github.com:JoshuaJVB/Week4LabA.wiki.git
+[submodule "week5/Day23/deployment"]
+	path = week5/Day23/deployment
+	url = https://github.com/andrewdstrain/deployment.git
