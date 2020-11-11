@@ -22,3 +22,6 @@
 [submodule "week4/testCucumber"]
 	path = week4/CucumberTest
 	url = git@github.com:LionelBeato/CucumberTest.git
+[submodule "week6/Day27/theone"]
+	path = week6/Day27/theone
+	url = git@github.com:andrewdstrain/theone.git
