@@ -25,3 +25,6 @@
 [submodule "week6/Day27/theone"]
 	path = week6/Day27/theone
 	url = git@github.com:andrewdstrain/theone.git
+[submodule "week6/Day28/mySQLHerokuDemo"]
+	path = week6/Day28/mySQLHerokuDemo
+	url = git@github.com:andrewdstrain/mySQLHerokuDemo.git
