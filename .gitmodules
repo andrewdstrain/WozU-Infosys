@@ -28,3 +28,6 @@
 [submodule "week4/Week4LabA"]
 	path = week4/Week4LabA
 	url = git@github.com:JoshuaJVB/Week4LabA.git
+[submodule "week7/Day34/seleasy"]
+	path = week7/Day34/seleasy
+	url = git@github.com:LionelBeato/seleasy.git
